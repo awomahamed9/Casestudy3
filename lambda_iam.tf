@@ -53,6 +53,15 @@ resource "aws_iam_role_policy" "lambda_policy" {
           "sns:Publish"
         ]
         Resource = aws_sns_topic.employee_notifications.arn
+      },
+      {
+        Effect = "Allow"
+        Action = [
+          "cognito-idp:AdminCreateUser",
+          "cognito-idp:AdminAddUserToGroup",
+          "cognito-idp:AdminGetUser"
+        ]
+        Resource = aws_cognito_user_pool.employees.arn
       }
     ]
   })

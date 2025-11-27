@@ -14,7 +14,7 @@ aws ecr get-login-password --region eu-central-1 | docker login --username AWS -
 echo "Pushing to ECR..."
 docker push 511000088594.dkr.ecr.eu-central-1.amazonaws.com/cs3-ma-nca-hr-app:latest
 
-echo "✅ Done!"
+echo "Done!"
 EOF
 
 chmod +x build-and-push.sh

@@ -1,7 +1,7 @@
 resource "aws_cloudwatch_event_rule" "db_poll_schedule" {
   name                = "${var.project}-db-poll"
   description         = "Trigger DB poller every 5 minutes"
-  schedule_expression = "rate(5 minutes)"
+  schedule_expression = "rate(1 minutes)"
 
   tags = {
     Name = "${var.project}-db-poll-schedule"

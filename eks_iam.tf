@@ -124,7 +124,7 @@ resource "aws_iam_policy" "alb_controller" {
         ]
         Resource = "*"
       },
-     {
+      {
         Effect = "Allow"
         Action = [
           "acm:ListCertificates",

@@ -14,10 +14,11 @@ resource "aws_lambda_function" "provisioning" {
 
   environment {
     variables = {
-      DB_HOST     = aws_db_instance.employee_db.endpoint
-      DB_NAME     = aws_db_instance.employee_db.db_name
-      DB_USER     = var.db_username
-      DB_PASSWORD = var.db_password
+      DB_HOST      = aws_db_instance.employee_db.endpoint
+      DB_NAME      = aws_db_instance.employee_db.db_name
+      DB_USER      = var.db_username
+      DB_PASSWORD  = var.db_password
+      USER_POOL_ID = aws_cognito_user_pool.employees.id
     }
   }
 

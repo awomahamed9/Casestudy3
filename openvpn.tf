@@ -40,7 +40,7 @@ resource "aws_instance" "openvpn_server" {
   associate_public_ip_address = true
   source_dest_check           = false
 
-  user_data = base64encode(templatefile("${path.module}/openvpn_user_data.sh", {
+  user_data = base64encode(templatefile("${path.module}/scripts/openvpn_user_data.sh", {
     vpc_cidr        = var.vpc_cidr
     vpn_client_cidr = "10.8.0.0/24"
     dns_server      = cidrhost(var.vpc_cidr, 2)
